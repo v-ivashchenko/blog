@@ -1,0 +1,31 @@
+class Header extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `    
+            <header>
+                <h1>Vitalii's  Dev Journey</h1>
+                Dive into the World of Development: Insights, Tips, and just thoughts by <a href="about.html">Vitalii Ivashchenko</a>
+
+                <nav>
+                    <a href="index.html">Articles</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About Me</a>
+                </nav>
+            </header>
+        `;
+
+        this.highlightActiveLink();
+    }
+
+    highlightActiveLink() {
+        const links = this.querySelectorAll('nav a');
+        const currentURL = window.location.pathname.split('/').pop();
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentURL) {
+                link.classList.add('active');
+            }
+        });
+    }
+}
+
+customElements.define('main-header', Header);
