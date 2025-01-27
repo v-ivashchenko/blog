@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="../">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link href="assets/stylesheets/styles.css" rel="stylesheet" type="text/css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize the file header in Xcode | Vitalii Ivashchenko</title>
+
+    <script src="assets/javascripts/footer.js" defer></script>
+    <script src="assets/javascripts/header.js" defer></script>
+</head>
+
+<body>
+    <main-header></main-header>
+
+    <main>
+        <div class="block">
+            <h1>Customize the file header in Xcode</h1>
+
+            <div class="header">
+                <div class="spacer"></div>
+                <div class="tag">Xcode</div>
+                January 27, 2025
+            </div>
+
+            Tired of repetitive file header edits in Xcode? Meet <code>IDETemplateMacros.plist</code>. This
+            file allows developers to define default settings and values for newly created files in Xcode projects,
+            enabling consistency and saving time.
+
+            <div class="subheader">What is IDETemplateMacros.plist?</div>
+
+            IDETemplateMacros.plist is a property list file that Xcode uses to populate predefined values in new
+            file templates. For instance, when you create a new Swift file, Xcode automatically inserts placeholders for
+            the file's author, company name, and copyright notice.
+
+            <p><img src="customize-the-file-header-in-xcode/example.png"></p>
+
+            By customizing IDETemplateMacros.plist, you can control these default values and make them reflect your
+            project's needs.
+
+            <div class="subheader">Why use IDETemplateMacros.plist?</div>
+
+            Consistency: Ensure uniformity across all project files by standardizing headers and other metadata.
+            <br />
+            Efficiency: Save time by avoiding repetitive editing of template-generated content.
+            <br />
+            Professionalism: Customize file headers to include project-specific or company-specific details, boosting
+            maintainability.
+
+            <div class="subheader">Where to find IDETemplateMacros.plist?</div>
+
+            The <code>IDETemplateMacros.plist</code> file is not included in your project by default. You can create
+            it
+            manually in Xcode's UserData directory. The typical location is:
+            <div class="code">~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist</div>
+
+            <b>Note: </b>For a full list of possible locations visit <a
+                href="https://help.apple.com/xcode/mac/current/#/dev91a7a31fc" target="_blank">Customize text
+                macros</a>
+            Xcode's Help
+            page.
+
+            <br /><br />
+            If the file doesn't exist, you can create it using the following steps:
+
+            <ol>
+                <li>Open Finder.</li>
+                <li>Navigate to the ~/Library/Developer/Xcode/UserData directory.</li>
+                <li>Create a new file named <code>IDETemplateMacros.plist</code>.</li>
+                <li>Open the file and paste the following, then save it (no need to restart Xcode):</li>
+            </ol>
+            <div class="code">
+                <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;FILEHEADER&lt;/key&gt;
+    &lt;string&gt;
+    //  Copyright © ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+    //&lt;/string&gt;
+    &lt;key&gt;ORGANIZATIONNAME&lt;/key&gt;
+    &lt;string&gt;Vitalii Ivashchenko&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</pre>
+            </div>
+
+            &emsp;<code>___ORGANIZATIONNAME___</code>: The name for your organization that appears in boilerplate
+            text
+            throughout
+            your project folder.
+            <br />
+            &emsp;<code>___YEAR___</code>: The localized year string for the current year.
+
+            <br /><br />
+            <b>Note: </b>For a full list of possible macros please visit <a
+                href="https://help.apple.com/xcode/mac/current/#/dev7fe737ce0" target="_blank">Text
+                macros reference</a> Xcode's Help page.
+
+            <div class="subheader">Practical Use Cases</div>
+
+            <ul>
+                <li>Custom File Headers: If your team requires specific information in file headers, such as a legal
+                    disclaimer or licensing details, you can automate their inclusion.</li>
+                <li>Team Collaboration: Standardize author or organization information across all team members’
+                    Xcode
+                    setups.</li>
+            </ul>
+
+            <div class="subheader">Conclusion</div>
+            The IDETemplateMacros.plist file is a powerful yet underutilized feature of Xcode that empowers
+            developers to enhance productivity and maintain consistency in their projects. By taking the time to
+            configure this file, you can save hours of repetitive work and ensure that all your project's files
+            adhere to your team's standards.
+
+            <br /><br />
+            Start customizing IDETemplateMacros.plist today to boost your productivity!
+        </div>
+    </main>
+
+    <main-footer></main-footer>
+</body>
+
+</html>
