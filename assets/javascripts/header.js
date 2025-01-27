@@ -6,7 +6,7 @@ class Header extends HTMLElement {
                 Dive into the World of Development: Insights, Tips, and just thoughts by <a href="about.html">Vitalii Ivashchenko</a>
 
                 <nav>
-                    <a href="/">Articles</a>
+                    <a href="index.html">Articles</a>
                     <a href="projects.html">Projects</a>
                     <a href="about.html">About Me</a>
                 </nav>
