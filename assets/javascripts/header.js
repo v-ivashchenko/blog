@@ -2,7 +2,7 @@ class Header extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `    
             <header>
-                <h1>Vitalii's  Dev Journey</h1>
+                <a href="index.html" style="text-decoration: none;"><h1>Vitalii's  Dev Journey</h1></a>
                 Dive into the World of Development: Insights, Tips, and just thoughts by <a href="about.html">Vitalii Ivashchenko</a>
 
                 <nav>
