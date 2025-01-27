@@ -6,7 +6,7 @@ class Header extends HTMLElement {
                 Dive into the World of Development: Insights, Tips, and just thoughts by <a href="about.html">Vitalii Ivashchenko</a>
 
                 <nav>
-                    <a href="index.html">Articles</a>
+                    <a href="/">Articles</a>
                     <a href="projects.html">Projects</a>
                     <a href="about.html">About Me</a>
                 </nav>
@@ -21,7 +21,8 @@ class Header extends HTMLElement {
         const currentURL = window.location.pathname.split('/').pop();
 
         links.forEach(link => {
-            if (link.getAttribute('href') === currentURL) {
+            const href = link.getAttribute('href');
+            if (href === currentURL || (currentURL === '' && href === '/')) {
                 link.classList.add('active');
             }
         });
